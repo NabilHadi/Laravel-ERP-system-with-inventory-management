@@ -27,6 +27,7 @@
         }
         .dropdown-menu {
             text-align: right;
+            min-width: 11rem;
         }
         .ms-auto {
             margin-right: auto !important;
@@ -118,7 +119,7 @@
                             </li> -->
 
                             <!-- Purchase Management -->
-                            <!-- <li class="nav-item dropdown">
+                           <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="purchasesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fas fa-truck me-1"></i> المشتريات
                                 </a>
@@ -133,7 +134,7 @@
                                         <i class="fas fa-truck-loading me-1"></i> الموردين
                                     </a>
                                 </div>
-                            </li> -->
+                            </li> 
 
                             <!-- Reports -->
                             <!-- <li class="nav-item dropdown">

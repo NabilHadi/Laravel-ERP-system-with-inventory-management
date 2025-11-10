@@ -1,0 +1,23 @@
+/* ===========================
+   AUTH LAYOUT STYLES
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+}

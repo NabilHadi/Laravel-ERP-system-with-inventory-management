@@ -1,0 +1,13 @@
+/* ===========================
+   MAIN CSS ENTRY POINT
+   =========================== */
+
+/* Import utilities first (variables, animations, resets) */
+@import 'utilities/variables.css';
+@import 'utilities/animations.css';
+
+/* Import layouts */
+@import 'layouts/auth.css';
+
+/* Import pages */
+@import 'pages/login.css';
