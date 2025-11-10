@@ -1,0 +1,70 @@
+/* Custom RTL Styles */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #f8f9fc;
+}
+
+.border-left-primary {
+    border-right: 0.25rem solid #4e73df !important;
+    border-left: none !important;
+}
+
+.border-left-success {
+    border-right: 0.25rem solid #1cc88a !important;
+    border-left: none !important;
+}
+
+.border-left-info {
+    border-right: 0.25rem solid #36b9cc !important;
+    border-left: none !important;
+}
+
+.border-left-warning {
+    border-right: 0.25rem solid #f6c23e !important;
+    border-left: none !important;
+}
+
+.card-header {
+    background-color: #f8f9fc;
+    border-bottom: 1px solid #e3e6f0;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fc;
+}
+
+.dropdown-menu {
+    text-align: right;
+}
+
+.navbar-brand {
+    font-weight: 700;
+}
+
+.nav-link {
+    font-weight: 600;
+}
+
+.btn {
+    font-weight: 600;
+}
+
+/* Dashboard Cards */
+.card .h5 {
+    font-size: 1.5rem;
+}
+
+.text-xs {
+    font-size: 0.8rem;
+}
+
+/* Icons */
+.fa-2x {
+    font-size: 2rem;
+}
