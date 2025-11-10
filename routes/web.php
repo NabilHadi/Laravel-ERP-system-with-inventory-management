@@ -22,7 +22,10 @@ use App\Http\Controllers\Reports\ReportController;
 |
 */
 
-Auth::routes(['register' => false]);
+// Authentication routes with rate limiting
+Route::middleware('throttle:5,1')->group(function () {
+    Auth::routes(['register' => false]);
+});
 
 // Redirect root to home
 Route::redirect('/', '/home');

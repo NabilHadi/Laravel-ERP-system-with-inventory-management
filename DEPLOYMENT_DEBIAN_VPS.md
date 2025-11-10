@@ -742,7 +742,90 @@ Paste:
 
 ---
 
-## Step 14: Setup Cron Jobs for Laravel Scheduler (Optional)
+## Step 14: Setup Fail2Ban for DDoS/Bot Protection (Recommended)
+
+Fail2ban monitors logs and automatically bans IPs attempting brute force attacks.
+
+### 14.1 Install Fail2Ban
+```bash
+sudo apt install -y fail2ban
+sudo systemctl enable fail2ban
+sudo systemctl start fail2ban
+```
+
+### 14.2 Configure Fail2Ban for Nginx
+Create a filter for login attempts:
+```bash
+sudo nano /etc/fail2ban/filter.d/nginx-http-auth.conf
+```
+
+Paste:
+```
+[Definition]
+failregex = ^<HOST> - .* \[.*\] "POST /login HTTP/1\.[01]" 401
+ignoreregex =
+```
+
+### 14.3 Create Fail2Ban Jail for Login Protection
+```bash
+sudo nano /etc/fail2ban/jail.d/muhaseb-pro.conf
+```
+
+Paste:
+```
+[DEFAULT]
+bantime = 3600
+findtime = 600
+maxretry = 5
+
+[nginx-http-auth]
+enabled = true
+port = http,https
+filter = nginx-http-auth
+logpath = /var/log/nginx/muhaseb-pro_access.log
+maxretry = 5
+findtime = 600
+bantime = 3600
+
+[nginx-login-attempt]
+enabled = true
+port = http,https
+filter = nginx-http-auth
+logpath = /var/log/nginx/muhaseb-pro_error.log
+maxretry = 5
+findtime = 600
+bantime = 3600
+```
+
+**Explanation:**
+- `maxretry = 5`: Ban after 5 failed attempts
+- `findtime = 600`: Within 10 minutes
+- `bantime = 3600`: Ban for 1 hour
+
+### 14.4 Restart Fail2Ban
+```bash
+sudo systemctl restart fail2ban
+sudo systemctl status fail2ban
+```
+
+### 14.5 Monitor Fail2Ban
+```bash
+# Check banned IPs
+sudo fail2ban-client status
+
+# Check specific jail
+sudo fail2ban-client status nginx-http-auth
+
+# View Fail2Ban logs
+sudo tail -f /var/log/fail2ban.log
+
+# Unban an IP (if needed)
+sudo fail2ban-client set nginx-http-auth unbanip <IP_ADDRESS>
+```
+
+---
+
+## Step 15: Setup Cron Jobs for Laravel Scheduler (Optional)
 
 ### 14.1 Add Cron Job
 ```bash
