@@ -95,7 +95,7 @@
                                     <label for="purchase_price">سعر الشراء <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control @error('purchase_price') is-invalid @enderror" id="purchase_price" name="purchase_price" 
                                         value="{{ old('purchase_price') }}" 
-                                        step="0.01" min="0" required>
+                                        step="0.01" min="0" inputmode="decimal" placeholder="0.00" required>
                                     @error('purchase_price')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror
@@ -106,7 +106,7 @@
                                     <label for="selling_price">سعر البيع <span class="text-danger">*</span></label>
                                     <input type="number" class="form-control @error('selling_price') is-invalid @enderror" id="selling_price" name="selling_price" 
                                         value="{{ old('selling_price') }}" 
-                                        step="0.01" min="0" required>
+                                        step="0.01" min="0" inputmode="decimal" placeholder="0.00" required>
                                     @error('selling_price')
                                         <div class="invalid-feedback d-block">{{ $message }}</div>
                                     @enderror

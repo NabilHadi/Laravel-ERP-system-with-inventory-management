@@ -22,7 +22,7 @@ use App\Http\Controllers\Reports\ReportController;
 |
 */
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 // Redirect root to home
 Route::redirect('/', '/home');
