@@ -64,21 +64,6 @@
                 @enderror
             </div>
 
-            <div class="form-group">
-                <div class="form-check">
-                    <input 
-                        class="form-check-input" 
-                        type="checkbox" 
-                        name="remember" 
-                        id="remember" 
-                        {{ old('remember') ? 'checked' : '' }}
-                    >
-                    <label class="form-check-label" for="remember">
-                        تذكرني
-                    </label>
-                </div>
-            </div>
-
             <button type="submit" class="login-button">
                 <i class="fas fa-sign-in-alt" style="margin-left: 8px;"></i> تسجيل الدخول
             </button>
