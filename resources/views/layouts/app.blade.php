@@ -78,7 +78,7 @@
                             <!-- Dashboard -->
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('home') }}">
-                                    <i class="fas fa-tachometer-alt me-1"></i> لوحة البيانات
+                                    <i class="fas fa-tachometer-alt me-1"></i> القائمة الرئيسية
                                 </a>
                             </li>
 
